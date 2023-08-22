@@ -13,6 +13,9 @@ library(dplyr)
 library(ggplot2)
 library(lubridate)
 library(sf)
+library(tibble)
+library(tidyr)
+library (readr)
 
 #Este 
 #importar los datos de observaciones
