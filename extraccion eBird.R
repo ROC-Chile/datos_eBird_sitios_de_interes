@@ -15,7 +15,7 @@ library(lubridate)
 library(sf)
 library(tibble)
 library(tidyr)
-library (readr)
+library(readr)
 
 #Este 
 #importar los datos de observaciones
@@ -35,7 +35,7 @@ cat <- read.csv("Lista aves de chile.csv")
 cat <- cat %>% select(nombre_cientifico,nombre_comun,categoria_IUCN,categoria_MMA)
 
 #filtrar la base de datos para retener solo las observaciones que cumplan los criterios que uno establezca
-#en este caso solo queremos retener listas con distancias recorridas menores a 15km y de una duracion menor a 8 horas
+#en este caso solo queremos retener listas con distancias recorridas menores a 10km y de una duracion menor a 6 horas
 obs_fil <- obs %>%
   # 2. definir filtros
   filter(protocol_type %in% c("Traveling", "Stationary"),
