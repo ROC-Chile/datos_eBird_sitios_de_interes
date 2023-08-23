@@ -1,4 +1,4 @@
-nombre_cientifico,nombre_comun,nombre_ingles,categoria_IUCN,categoria_RCE
+nombre_cientifico,nombre_comun,nombre_ingles,categoria_IUCN,categoria_MMA
 Sephanoides fernandensis,Picaflor de Juan Fernández,Juan Fernandez Firecrown,CR,CR
 Eulidia yarrellii,Picaflor de Arica,Chilean Woodstar,CR,CR
 Aphrastura masafuerae,Rayadito de Masafuera,Masafuera Rayadito,CR,CR
@@ -45,7 +45,7 @@ Sula variegata,Piquero de Humboldt,Peruvian Booby,LC,LC
 Ixobrychus involucris,Huairavillo común,Stripe-backed Bittern,LC,LC
 Ardea cocoi,Garza cuca,Cocoi Heron,LC,LC
 Theristicus melanopis,Bandurria común,Black-faced Ibis,LC,LC
-Accipiter bicolor,Peuquito,Bicolored Hawk,LC,LC
+Accipiter chilensis,Peuquito,Chilean Hawk,LC,LC
 Asio flammeus,Nuco,Short-eared Owl,LC,LC
 Falco peregrinus,Halcón peregrino,Peregrine Falcon,LC,LC
 Psilopsiagon aurifrons,Perico cordillerano,Mountain Parakeet,LC,LC
@@ -68,8 +68,8 @@ Phegornis mitchellii,Chorlito cordillerano,Diademed Sandpiper-Plover,NT,NT
 Haematopus palliatus,Pilpilén común,American Oystercatcher,LC,NT
 Larosterna inca,Gaviotín monja,Inca Tern,NT,NT
 Ardenna grisea,Fardela negra,Sooty Shearwater,NT,NT
-Phalacrocorax gaimardi,Lile,Red-legged Cormorant,NT,NT
-Phalacrocorax bougainvillii,Guanay,Guanay Cormorant,NT,NT
+Poikilocarbo gaimardi,Lile,Red-legged Cormorant,NT,NT
+Leucocarbo bougainvillii,Guanay,Guanay Cormorant,NT,NT
 Pelecanus thagus,Pelícano de Humboldt,Peruvian Pelican,NT,NT
 Plegadis chihi,Cuervo de pantano común,White-faced Ibis,LC,NT
 Vultur gryphus,Cóndor,Andean Condor,VU,NT
@@ -84,7 +84,7 @@ Plegadis ridgwayi,Cuervo de pantano de la puna,Puna Ibis,LC,NT
 Thalassarche cauta,Albatros de frente blanca,White-capped Albatross,NT,NT
 Oreopholus ruficollis,Chorlo de campo,Tawny-throated Dotterel,LC,NT Desde Región de Antofagasta hasta región de Los Lagos. LC resto del país
 Rhea pennata,Ñandú,Lesser Rhea,LC,Ver ssp.
-Diomedea epomophora,Albatros real,Royal Albatross,Ver ssp.,Ver ssp.
+Diomedea epomophora,Albatros real,Royal Albatross,EN,Ver ssp.
 Tinamotis ingoufi,Perdiz austral,Patagonian Tinamou,LC,VU
 Chloephaga hybrida,Caranca,Kelp Goose,LC,VU
 Phoenicoparrus andinus,Parina grande,Andean Flamingo,VU,VU
@@ -127,7 +127,7 @@ Mareca sibilatrix,Pato real,Chiloe Wigeon,LC,
 Anas georgica,Pato jergón grande,Yellow-billed Pintail,LC,
 Anas flavirostris,Pato jergón chico,Yellow-billed Teal,LC,
 Netta peposaca,Pato negro,Rosy-billed Pochard,LC,
-Oxyura jamaicensis,Pato rana de pico ancho,Ruddy Duck,LC,
+Oxyura ferruginea,Pato rana de pico ancho,Andean Duck,LC,
 Oxyura vittata,Pato rana de pico delgado,Lake Duck,LC,
 Rollandia rolland,Pimpollo común,White-tufted Grebe,LC,
 Podilymbus podiceps,Picurio,Pied-billed Grebe,LC,
@@ -205,7 +205,7 @@ Pelecanoides urinatrix,Yunco de los canales,Common Diving-Petrel,LC,
 Pelecanoides magellani,Yunco de Magallanes,Magellanic Diving-Petrel,LC,
 Sula nebouxii,Piquero de patas azules,Blue-footed Booby,LC,
 Sula dactylatra,Piquero blanco,Masked Booby,LC,
-Phalacrocorax brasilianus,Yeco,Neotropic Cormorant,LC,
+Nannopterum brasilianus,Yeco,Neotropic Cormorant,LC,
 Phalacrocorax magellanicus,Cormorán de las rocas,Magellanic Cormorant,LC,
 Phalacrocorax atriceps,Cormorán imperial,Imperial Cormorant,LC,
 Nycticorax nycticorax,Huairavo común,Black-crowned Night-Heron,LC,
@@ -220,7 +220,7 @@ Parabuteo unicinctus,Peuco,Harris's Hawk,LC,
 Geranoaetus polyosoma,Aguilucho común,Variable Hawk,LC,
 Geranoaetus melanoleucus,Águila,Black-chested Buzzard-Eagle,LC,
 Tyto alba,Lechuza,Barn Owl,LC,
-Bubo virginianus,Tucúquere,Great Horned Owl,LC,
+Bubo magallanicus,Tucúquere,Lesser Horned Owl,LC,
 Glaucidium peruanum,Chuncho del norte,Peruvian Pygmy-Owl,LC,
 Glaucidium nana,Chuncho austral,Austral Pygmy-Owl,LC,
 Athene cunicularia,Pequén,Burrowing Owl,LC,
@@ -232,7 +232,7 @@ Caracara plancus,Traro,Crested Caracara,LC,
 Phalcoboenus megalopterus,Carancho cordillerano,Mountain Caracara,LC,
 Phalcoboenus albogularis,Carancho de garganta blanca,White-throated Caracara,LC,
 Phalcoboenus australis,Carancho negro,Striated Caracara,NT,
-Milvago chimango,Tiuque,Chimango Caracara,LC,
+Daptrius chimango,Tiuque,Chimango Caracara,LC,
 Falco sparverius,Cernícalo,American Kestrel,LC,
 Falco femoralis,Halcón perdiguero,Aplomado Falcon,LC,
 Enicognathus ferrugineus,Cachaña,Austral Parakeet,LC,
