@@ -19,7 +19,7 @@ library(readr)
 
 #Este 
 #importar los datos de observaciones
-f_ebd <- "data/ebd_CL_relDec-2022.txt"
+f_ebd <- "ebd_CL_smp_relJul-2023.txt"
 obs <- read_ebd(f_ebd)
 
 #convertir los "X" a NA y transformar conteos a números enteros
@@ -28,7 +28,7 @@ obs$observation_count <- if_else(obs$observation_count == "X", NA_character_, ob
   
 #leer el shape file o .kml para el polígono del IBA
 #evitar archivos .kmz
-poly <- read_sf("Bahia Coquimbo.kml") #insertar nombre de archivo propio
+poly <- read_sf("Aconcagua.kml") #insertar nombre de archivo propio
 
 #leer planilla con categoría de conservacion de las especies
 cat <- read.csv("Lista aves de chile.csv")
@@ -89,14 +89,19 @@ especie <-   ebd_in_poly %>%
 registro_último_año <-  ebd_in_poly %>% 
   filter(year(observation_date) == year(max(observation_date))) %>% 
   group_by(common_name) %>% 
-  summarise(conteo_max_último_año = max(observation_count, na.rm=TRUE),checklist = first(sampling_event_identifier),
+  arrange(desc(observation_count)) %>%  # Ordenar en orden descendente de conteo
+  summarise(conteo_max_último_año = max(observation_count, na.rm=TRUE),checklist.x = first(sampling_event_identifier),
             conteo_max_último_año = replace(conteo_max_último_año, conteo_max_último_año == -Inf, 0)) %>%
   mutate(registro_último_año = TRUE)
 
 #conteo máximo histórico para cada especie registrada en el polígono
 conteo_max_h <- ebd_in_poly %>% 
   group_by(common_name) %>%
-  summarise(conteo_max_h = max(observation_count, na.rm=TRUE), año_max_h = max(year(observation_date)), checklist = first(sampling_event_identifier))
+  arrange(desc(observation_count)) %>%
+  slice(1) %>%  # Tomar solo la primera fila (máximo conteo)
+  summarise(conteo_max_h = max(observation_count, na.rm=TRUE),
+            año_max_h = max(year(observation_date)), 
+            checklist.y = first(sampling_event_identifier))
 
 #promedio de conteo en los registros de los últimos 5 años
 prom_conteo_5_años <- ebd_in_poly %>% 
@@ -136,7 +141,7 @@ tabla_datos <- tabla_datos %>%
 tabla_datos$registro_último_año <- replace(tabla_datos$registro_último_año, is.na(tabla_datos$registro_último_año),FALSE)
 
 # EXPORTAR LA TABLA COMO .CSV
-write_csv(tabla_datos, "datos eBird IBA Bahia Coquimbo.csv")
+write_csv(tabla_datos, "datos eBird Aconcagua.csv")
 
 
 ############ HERRAMIENTAS ADICIONALES ################
