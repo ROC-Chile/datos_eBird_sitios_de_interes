@@ -1,13 +1,6 @@
-#SCRIPT PARA EXTRAER DATOS EBIRD PARA SITIOS DE INTERÉS
+#SCRIPT PARA EXTRAER DATOS DE eBIRD PARA SITIOS DE INTERÉS
 
-#instalar paquetes requeridos 
-install.packages('auk') #para lectura y manipulacion de base de datos de eBird
-install.packages('dplyr') #para
-install.packages('ggplot2') #para todas funciones de manipulacion de datos
-install.packages('lubridate') #para todas funciones de manipulacion de datos
-install.packages('sf') #para leer y manipular shape files
-
-#activar paquetes
+#activar paquetes (instalar en su computador previamente)
 library(auk)
 library(dplyr)
 library(ggplot2)
@@ -17,9 +10,8 @@ library(tibble)
 library(tidyr)
 library(readr)
 
-#Este 
 #importar los datos de observaciones
-f_ebd <- "ebd_CL_smp_relJul-2023.txt" #especificar el pathway correcto para llegar al lugar donde está almacenado en su computador 
+f_ebd <- "ebd_CL_smp_relJul-2023.txt" #especificar el pathway para llegar al lugar donde está almacenado en su computador 
 obs <- read_ebd(f_ebd)
 
 #convertir los "X" a NA y transformar conteos a números enteros
@@ -40,7 +32,8 @@ obs_fil <- obs %>%
   # 2. definir filtros
   filter(protocol_type %in% c("Traveling", "Stationary"),
          duration_minutes < 6 * 60,
-         effort_distance_km < 10 | protocol_type == "Stationary") 
+         effort_distance_km < 10 | protocol_type == "Stationary",
+         exotic_code == "N") 
 
 #seleccionar solo las columnas necesarias para reducir tamaño del dataframe
 obs_lim <- obs_fil %>%
