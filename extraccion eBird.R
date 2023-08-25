@@ -19,7 +19,7 @@ library(readr)
 
 #Este 
 #importar los datos de observaciones
-f_ebd <- "ebd_CL_smp_relJul-2023.txt"
+f_ebd <- "ebd_CL_smp_relJul-2023.txt" #especificar el pathway correcto para llegar al lugar donde está almacenado en su computador 
 obs <- read_ebd(f_ebd)
 
 #convertir los "X" a NA y transformar conteos a números enteros
