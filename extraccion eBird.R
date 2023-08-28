@@ -24,7 +24,7 @@ poly <- read_sf("Aconcagua.kml") #insertar nombre de archivo propio
 
 #leer planilla con categoría de conservacion de las especies
 cat <- read.csv("Lista aves de chile.csv")
-cat <- cat %>% select(nombre_cientifico,nombre_comun,categoria_IUCN,categoria_MMA)
+cat <- cat %>% select(nombre_cientifico,nombre_comun,categoria_IUCN,categoria_MMA,status)
 
 #filtrar la base de datos para retener solo las observaciones que cumplan los criterios que uno establezca
 #en este caso solo queremos retener listas con distancias recorridas menores a 10km y de una duracion menor a 6 horas
@@ -115,7 +115,7 @@ tabla_datos <- left_join(especie,registro_último_año, by = "common_name") %>%
   left_join(.,cod_rep, by = "common_name") %>%
   left_join(., cat, by = c("scientific_name" = "nombre_cientifico")) %>% 
   group_by(common_name) %>%
-  select("nombre_comun","common_name","scientific_name","registro_último_año","conteo_max_último_año","checklist.x","conteo_max_h","año_max_h","checklist.y","prom_conteos_5_años","cod_rep","categoria_MMA","categoria_IUCN","taxonomic_order")
+  select("nombre_comun","common_name","scientific_name","registro_último_año","conteo_max_último_año","checklist.x","conteo_max_h","año_max_h","checklist.y","prom_conteos_5_años","cod_rep","categoria_MMA","categoria_IUCN","taxonomic_order","status")
   slice(1) #remueve las filas de especie repetidas por tener subespecie
 
 #ordenar la tabla según orden taxonómico, reemplazar NAs y números infinitos por 0
